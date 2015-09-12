@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mea_main_edit2">
+
+    <Button
+        android:id="@+id/btn_create_new_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:onClick="OnCreateNewAccountClick"
+        android:text="@string/btn_create_new_account"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_create_new_account"
+        android:layout_alignEnd="@id/btn_create_new_account"
+        android:layout_alignLeft="@id/btn_create_new_account"
+        android:layout_alignRight="@id/btn_create_new_account"
+        android:layout_alignStart="@id/btn_create_new_account"
+        android:onClick="OnLoginClick"
+        android:text="@string/btn_login"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_website"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/btn_create_new_account"
+        android:layout_alignLeft="@id/btn_create_new_account"
+        android:layout_alignRight="@id/btn_create_new_account"
+        android:layout_alignStart="@id/btn_create_new_account"
+        android:layout_below="@id/btn_create_new_account"
+        android:onClick="onWebsiteClick"
+        android:text="@string/btn_website"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_above="@id/btn_login"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mea_header" />
+
+</RelativeLayout>
