@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String WEBSITE_URL = "https://www.apostlemod.com";
+    public static final String WEBSITE_URL = "https://www.apostlemod.com/home-mise-en-abyme.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onWebsiteClick(View view) {
+        //startActivity(new Intent(MainActivity.this, ViewHomePageActivity.class));
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(WEBSITE_URL));
         startActivity(intent);
