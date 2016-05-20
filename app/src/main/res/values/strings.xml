@@ -5,6 +5,6 @@
     <string name="action_settings">Settings</string>
     <string name="btn_login">LOGIN</string>
     <string name="btn_create_new_account">CREATE NEW ACCOUNT</string>
-    <string name="btn_website">WEBSITE</string>
+    <string name="btn_website">HOW TO USE MEA APP</string>
     <string name="app_launcher_name">MiseEnAbyme</string>
 </resources>
