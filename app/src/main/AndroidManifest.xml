@@ -21,8 +21,7 @@
 
         <activity
             android:name=".RemoteAccessActivity"
-            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
     </application>
-
+    <!--android:screenOrientation="landscape"-->
 </manifest>

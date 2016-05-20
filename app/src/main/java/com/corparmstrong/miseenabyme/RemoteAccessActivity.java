@@ -3,11 +3,7 @@ package com.corparmstrong.miseenabyme;
 import android.app.Activity;
 import android.net.http.SslError;
 import android.os.Bundle;
-import android.os.Message;
-import android.view.View;
-import android.view.ViewGroup;
 import android.webkit.SslErrorHandler;
-import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -21,10 +17,9 @@ import java.net.URISyntaxException;
  */
 public class RemoteAccessActivity extends Activity {
 
-    public static final String REMOTE_ACCESS_URL = "https://www.apostlemod.com/miseenabyme/index.xhtml";
+    public static final String REMOTE_ACCESS_URL = "https://www.apostlemod.com/MiseEnAbyme";
 
     private WebView webView;
-    private WebView webViewHidden;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,34 +28,13 @@ public class RemoteAccessActivity extends Activity {
         setContentView(R.layout.activity_remote_access);
 
         webView = (WebView) findViewById(R.id.webView);
-        webViewHidden = (WebView) findViewById(R.id.webViewHidden);
         webView.setWebViewClient(new HelloWebViewClient());
 
         WebSettings settings = webView.getSettings();
 
         settings.setJavaScriptEnabled(true);
-        // By using this method together with the overridden method onReceivedSslError()
-        // you will avoid the "WebView Blank Page" problem to appear. This might happen if you
-        // use a "https" url!
         settings.setDomStorageEnabled(true);
         settings.setSupportMultipleWindows(true);
-
-        webView.setWebChromeClient(new WebChromeClient() {
-            @Override
-            public boolean onCreateWindow(
-                    WebView view, boolean isDialog, boolean isUserGesture, Message resultMsg) {
-                WebView.WebViewTransport transport = (WebView.WebViewTransport) resultMsg.obj;
-                WebView childWebView = webViewHidden;
-                childWebView.setVisibility(View.VISIBLE);
-                //webView.setVisibility(View.GONE);
-                childWebView.setWebViewClient(new HelloWebViewClient());
-                childWebView.getSettings().setJavaScriptEnabled(true);
-                childWebView.getSettings().setDomStorageEnabled(true);
-                transport.setWebView(childWebView);
-                resultMsg.sendToTarget();
-                return true;
-            }
-        });
 
         URI uri = null;
 
